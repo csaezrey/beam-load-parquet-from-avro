@@ -37,11 +37,10 @@ public class BasicApacheBeam {
         transformData.apply(ParDo.of(new PrintFunction()));
 
         //Load
-        transformData.apply(FileIO.<GenericRecord>write().via(ParquetIO.sink(schema)).to(options.getTarget()).withNumShards(1));
+        transformData.apply(FileIO.<GenericRecord>write().via(ParquetIO.sink(schema)).to(options.getTarget()).withNumShards(1).withSuffix(options.getSuffix()));
 
         //Execute steps
         pipeline.run();
-
 
     }
 

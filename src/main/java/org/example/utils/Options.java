@@ -16,10 +16,10 @@ public interface Options extends PipelineOptions {
     String getTarget();
     void setTarget(String target);
 
-    @Description("Sufix")
+    @Description("Suffix")
     @Default.String(".parquet")
-    String getSufix();
-    void setSufix(String sufix);
+    String getSuffix();
+    void setSuffix(String suffix);
 
     @Description("FieldEncrypt")
     @Default.String("name")
